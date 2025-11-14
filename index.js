@@ -15,7 +15,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// In-memory DB (demo only)
 const db = new sqlite3.Database(':memory:');
 db.serialize(() => {
   db.run("CREATE TABLE users (id INTEGER PRIMARY KEY, email TEXT UNIQUE, password TEXT, name TEXT)");
